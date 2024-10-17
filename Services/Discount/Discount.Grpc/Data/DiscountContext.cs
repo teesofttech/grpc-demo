@@ -13,25 +13,22 @@ public class DiscountContext(DbContextOptions<DiscountContext> options)
                 new Coupon
                 {
                     Id = 1,
-                    Code = "WELCOME10",
-                    ProductCode = "",
-                    Description = "10% off your first purchase",
+                    ProductCode = "BOOK0001",
+                    Description = "Book 1 discount",
                     DiscountPercentage = 10
                 },
                 new Coupon
                 {
                     Id = 2,
-                    Code = "SAVE5",
-                    ProductCode = "",
-                    Description = "$5 off any purchase",
+                    ProductCode = "BOOK0002",
+                    Description = "Book 2 discount",
                     DiscountPercentage = 5
                 },
                 new Coupon
                 {
                     Id = 3,
-                    Code = "HOLIDAY10",
-                    ProductCode = "BOOK001",
-                    Description = "10% off during the holiday season",
+                    ProductCode = "BOOK0003",
+                    Description = "Book 3 discount",
                     DiscountPercentage = 10
                 }
                 );

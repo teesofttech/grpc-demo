@@ -18,7 +18,6 @@ namespace Discount.Grpc.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Code = table.Column<string>(type: "TEXT", nullable: false),
                     ProductCode = table.Column<string>(type: "TEXT", nullable: true),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     DiscountPercentage = table.Column<int>(type: "INTEGER", nullable: false)
@@ -30,12 +29,12 @@ namespace Discount.Grpc.Migrations
 
             migrationBuilder.InsertData(
                 table: "Coupons",
-                columns: new[] { "Id", "Code", "Description", "DiscountPercentage", "ProductCode" },
+                columns: new[] { "Id", "Description", "DiscountPercentage", "ProductCode" },
                 values: new object[,]
                 {
-                    { 1, "WELCOME10", "10% off your first purchase", 10, "" },
-                    { 2, "SAVE5", "$5 off any purchase", 5, "" },
-                    { 3, "HOLIDAY10", "10% off during the holiday season", 10, "BOOK001" }
+                    { 1, "Book 1 discount", 10, "BOOK0001" },
+                    { 2, "Book 2 discount", 5, "BOOK0002" },
+                    { 3, "Book 3 discount", 10, "BOOK0003" }
                 });
         }
 

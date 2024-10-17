@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Discount.Grpc.Migrations
 {
     [DbContext(typeof(DiscountContext))]
-    [Migration("20241017112451_Initial")]
+    [Migration("20241017170801_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,10 +24,6 @@ namespace Discount.Grpc.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -47,26 +43,23 @@ namespace Discount.Grpc.Migrations
                         new
                         {
                             Id = 1,
-                            Code = "WELCOME10",
-                            Description = "10% off your first purchase",
+                            Description = "Book 1 discount",
                             DiscountPercentage = 10,
-                            ProductCode = ""
+                            ProductCode = "BOOK0001"
                         },
                         new
                         {
                             Id = 2,
-                            Code = "SAVE5",
-                            Description = "$5 off any purchase",
+                            Description = "Book 2 discount",
                             DiscountPercentage = 5,
-                            ProductCode = ""
+                            ProductCode = "BOOK0002"
                         },
                         new
                         {
                             Id = 3,
-                            Code = "HOLIDAY10",
-                            Description = "10% off during the holiday season",
+                            Description = "Book 3 discount",
                             DiscountPercentage = 10,
-                            ProductCode = "BOOK001"
+                            ProductCode = "BOOK0003"
                         });
                 });
 #pragma warning restore 612, 618
