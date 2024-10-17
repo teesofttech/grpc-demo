@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Discount.Grpc.Migrations
 {
     [DbContext(typeof(DiscountContext))]
-    [Migration("20241017170801_Initial")]
+    [Migration("20241017171900_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -33,6 +33,7 @@ namespace Discount.Grpc.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ProductCode")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

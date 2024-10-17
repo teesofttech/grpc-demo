@@ -27,23 +27,12 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
             "Coupon is found for Product Code: {productCode}",
             request.ProdcutCode);
 
-        return new CouponModel
-        {
-            Id = coupon.Id,
-            Desciption = coupon.Description,
-            ProdcutCode = coupon.ProductCode,
-            DiscountPercentage = coupon.DiscountPercentage
-        };
+        return coupon.ToModel();
     }
 
     public override async Task<CouponModel> CreateDiscount(CreateDiscountRequest request, ServerCallContext context)
     {
-        var coupon = new Coupon
-        {
-            ProductCode = request.Coupon.ProdcutCode,
-            Description = request.Coupon.Desciption,
-            DiscountPercentage = request.Coupon.DiscountPercentage
-        };
+        var coupon = request.Coupon.ToEntity();
 
         dbContext.Coupons.Add(coupon);
 
@@ -53,13 +42,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
             "Coupon is created for Product Code: {productCode}",
             request.Coupon.ProdcutCode);
 
-        return new CouponModel
-        {
-            Id = coupon.Id,
-            Desciption = coupon.Description,
-            ProdcutCode = coupon.ProductCode,
-            DiscountPercentage = coupon.DiscountPercentage
-        };
+        return coupon.ToModel();
     }
 
     public override async Task<CouponModel> UpdateDiscount(UpdateDiscountRequest request, ServerCallContext context)
@@ -90,13 +73,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
             "Coupon is updated by Product Code: {productCode}",
             request.Coupon.ProdcutCode);
 
-        return new CouponModel
-        {
-            Id = coupon.Id,
-            Desciption = coupon.Description,
-            ProdcutCode = coupon.ProductCode,
-            DiscountPercentage = coupon.DiscountPercentage
-        };
+        return coupon.ToModel();
     }
 
     public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)

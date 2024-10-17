@@ -1,4 +1,6 @@
-﻿namespace Discount.Grpc.Data;
+﻿using Discount.Grpc.Entities;
+
+namespace Discount.Grpc.Data;
 
 public class DiscountContext(DbContextOptions<DiscountContext> options)
     : DbContext(options)
