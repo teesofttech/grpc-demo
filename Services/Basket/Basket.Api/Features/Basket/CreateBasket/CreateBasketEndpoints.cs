@@ -8,7 +8,7 @@ public sealed class CreateBasketEndpoints : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("", async () =>
+        app.MapPost("/api/basket", async () =>
         {
 
         })

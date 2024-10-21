@@ -9,15 +9,10 @@
   <ItemGroup>
     <PackageReference Include="Carter" Version="8.2.1" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="..\..\Discount\Discount.Grpc\Protos\disount.proto" GrpcServices="Client">
-      <Link>Protos\disount.proto</Link>
-    </Protobuf>
   </ItemGroup>
 
 </Project>
