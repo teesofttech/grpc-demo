@@ -23,4 +23,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\grpc-demo.ServiceDefaults\grpc-demo.ServiceDefaults.csproj" />
+  </ItemGroup>
+
 </Project>

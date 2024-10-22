@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Services\Basket\Basket.Api\Basket.Api.csproj" />
+    <ProjectReference Include="..\Services\Discount\Discount.Grpc\Discount.Grpc.csproj" />
   </ItemGroup>
 
 </Project>
