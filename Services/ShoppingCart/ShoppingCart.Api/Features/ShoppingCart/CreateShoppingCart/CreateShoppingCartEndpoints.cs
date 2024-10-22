@@ -4,7 +4,7 @@ public sealed record CreateBasketRequest(
 public sealed record CreateBasketResponse(Guid Id);
 
 
-public sealed class CreateBasketEndpoints : ICarterModule
+public sealed class CreateShoppingCartEndpoints : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
