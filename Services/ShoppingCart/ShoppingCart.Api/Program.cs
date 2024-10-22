@@ -14,7 +14,7 @@ builder.Services.AddMediatR(config =>
 
 builder.Services.AddMarten(config =>
 {
-    config.Connection(builder.Configuration.GetConnectionString("Database")!);
+    config.Connection(builder.Configuration.GetConnectionString("shoppingcart-db")!);
     config.Schema.For<Cart>().Identity(s => s.UserName);
 })
 .UseLightweightSessions();
