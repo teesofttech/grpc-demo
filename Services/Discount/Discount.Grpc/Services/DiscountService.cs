@@ -87,7 +87,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
         ServerCallContext context)
     {
         var coupon = await dbContext
-           .Coupons
+           .Coupons           
            .FirstOrDefaultAsync(d => d.ProductCode == request.Coupon.ProdcutCode);
 
         if (coupon is null)
