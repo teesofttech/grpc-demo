@@ -1,4 +1,4 @@
-﻿namespace Basket.Api.Features.Basket.CreateBasket;
+﻿namespace ShoppingCart.Api.Features.ShoppingCart.CreateShoppingCart;
 public sealed record CreateBasketRequest(
     );
 public sealed record CreateBasketResponse(Guid Id);

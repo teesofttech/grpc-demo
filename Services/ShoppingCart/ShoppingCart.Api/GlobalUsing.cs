@@ -1,3 +1,5 @@
 ﻿global using Carter;
+global using Marten;
 
-global using Basket.Api.Entities;
+global using ShoppingCart.Api.Entities;
+global using ShoppingCart.Api.Exceptions;

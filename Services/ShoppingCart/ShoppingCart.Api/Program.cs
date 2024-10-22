@@ -12,6 +12,13 @@ builder.Services.AddMediatR(config =>
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
 });
 
+builder.Services.AddMarten(config =>
+{
+    config.Connection(builder.Configuration.GetConnectionString("Database")!);
+    config.Schema.For<Cart>().Identity(s => s.UserName);
+})
+.UseLightweightSessions();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
