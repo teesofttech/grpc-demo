@@ -36,6 +36,8 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
 });
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -49,5 +51,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseExceptionHandler(options => { });
 
 app.Run();

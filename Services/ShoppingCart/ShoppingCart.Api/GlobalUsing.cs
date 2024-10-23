@@ -1,5 +1,7 @@
 ﻿global using Microsoft.Extensions.Caching.Distributed;
 global using System.Text.Json;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.AspNetCore.Mvc;
 
 global using Carter;
 global using Mapster;

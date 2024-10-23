@@ -27,14 +27,14 @@ public sealed class CreateShoppingCartCommandHandler(
     {
         var cart = command.Adapt<Cart>();
 
-        await CalculateDiscountPercentage(cart, cancellationToken);
+        await DedcutDiscount(cart, cancellationToken);
 
         await repository.CreateAsync(cart, cancellationToken);
 
         return new CreateShoppingCartResult(cart.UserName);
     }
 
-    private async Task CalculateDiscountPercentage(Cart cart, CancellationToken cancellationToken)
+    private async Task DedcutDiscount(Cart cart, CancellationToken cancellationToken)
     {
         foreach (var item in cart.Items)
         {
