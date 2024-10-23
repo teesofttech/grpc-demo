@@ -1,3 +1,5 @@
+using Discount.Grpc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -18,6 +20,21 @@ builder.Services.AddMarten(config =>
     config.Schema.For<Cart>().Identity(s => s.UserName);
 })
 .UseLightweightSessions();
+
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+builder.Services.Decorate<IShoppingCartRepository, CachedShoppingCartRepository>();
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("shoppingcart-cache");
+    options.InstanceName = "Shopping-Cart";
+});
+
+
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+});
 
 var app = builder.Build();
 

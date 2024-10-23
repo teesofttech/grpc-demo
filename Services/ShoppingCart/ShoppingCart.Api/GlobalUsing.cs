@@ -1,4 +1,7 @@
-﻿global using Carter;
+﻿global using Microsoft.Extensions.Caching.Distributed;
+global using System.Text.Json;
+
+global using Carter;
 global using Mapster;
 global using MediatR;
 global using Marten;
