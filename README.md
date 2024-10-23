@@ -30,9 +30,9 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    cd grpc-demo
    ```
-3. Build and run the application:
+3. Restore dependencies:
    ```sh
-   docker-compose up --build
+   dotnet restore
    ```
 
 ## Architecture Overview
