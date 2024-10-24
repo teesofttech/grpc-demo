@@ -19,6 +19,7 @@ To get a local copy up and running, follow these simple steps.
 ### Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- Docker
 
 ### Installation
 
