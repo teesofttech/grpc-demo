@@ -8,7 +8,7 @@ var shoppingCartCache = builder.AddRedis("shoppingcart-cache")
     .WithDataVolume()
     .WithRedisCommander();
 
-builder.AddProject<Projects.Discount_Grpc>("discount-grpc");
+var disocuntGrpc = builder.AddProject<Projects.Discount_Grpc>("discount-grpc");
 
 builder.AddProject<Projects.ShoppingCart_Api>("shoppingcart-api")
     .WithReference(shoppingcartDb)
