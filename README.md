@@ -1,4 +1,4 @@
-# Shpping Cart API with .NET 8, Aspire, gRPC, PostgreSQL, Marten and Redis
+# Shopping Cart API with .NET 8, Aspire, gRPC, PostgreSQL, Marten and Redis
 
 
 This repository showcases a sample API built with .NET 8 that demonstrates the integration of .NET Aspire orchestration. The application utilizes Marten as its document database on PostgreSQ, and Redis for caching, all while leveraging gRPC for efficient communication. Together, these components provide a robust foundation for scalable web APIs.
