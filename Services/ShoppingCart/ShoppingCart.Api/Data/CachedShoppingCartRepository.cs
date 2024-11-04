@@ -12,6 +12,14 @@ public sealed class CachedShoppingCartRepository(
 
         return cart;
     }
+    public async Task<Cart> UpdateAsync(Cart cart, CancellationToken cancellationToken = default)
+    {
+        await repository.UpdateAsync(cart, cancellationToken);
+
+        await cache.SetStringAsync(cart.UserName, JsonSerializer.Serialize(cart));
+
+        return cart;
+    }
 
     public async Task<bool> DeleteAsync(string userName, CancellationToken cancellationToken = default)
     {
@@ -37,4 +45,5 @@ public sealed class CachedShoppingCartRepository(
 
         return cart;
     }
+
 }

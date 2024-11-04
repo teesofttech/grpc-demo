@@ -11,6 +11,14 @@ public sealed class ShoppingCartRepository(IDocumentSession session)
         return cart;
     }
 
+    public async Task<Cart> UpdateAsync(Cart cart, CancellationToken cancellationToken = default)
+    {
+        session.Update(cart);
+        await session.SaveChangesAsync(cancellationToken);
+
+        return cart;
+    }
+
     public async Task<bool> DeleteAsync(string userName, CancellationToken cancellationToken = default)
     {
         session.Delete<Cart>(userName);
