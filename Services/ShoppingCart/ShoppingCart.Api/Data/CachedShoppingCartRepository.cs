@@ -45,5 +45,4 @@ public sealed class CachedShoppingCartRepository(
 
         return cart;
     }
-
 }
