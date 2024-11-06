@@ -16,11 +16,10 @@ public sealed class UpdateShoppingCartEndpoint : ICarterModule
 
             var response = result.Adapt<UpdateShoppingCartResponse>();
 
-            return Results.Created($"/api/shopping-cart/{response.UserName}",
-                response);
+            return Results.Ok();
         })
         .WithName("UpdateShoppingCart")
-        .Produces<UpdateShoppingCartResponse>(StatusCodes.Status201Created)
+        .Produces<UpdateShoppingCartResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .WithSummary("Update Shopping Cart")
         .WithDescription("Update Shopping Cart");
