@@ -8,7 +8,7 @@ public sealed class UpdateShoppingCartEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPut("/api/shopping-cart", async (UpdateShoppingCartRequest request, ISender sender) =>
+        app.MapPut("/api/shopping-cart/{userName}", async (UpdateShoppingCartRequest request, ISender sender) =>
         {
             var command = request.Adapt<UpdateShoppingCartCommand>();
 
@@ -21,6 +21,7 @@ public sealed class UpdateShoppingCartEndpoint : ICarterModule
         .WithName("UpdateShoppingCart")
         .Produces<UpdateShoppingCartResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
+        .ProducesProblem(StatusCodes.Status404NotFound)
         .WithSummary("Update Shopping Cart")
         .WithDescription("Update Shopping Cart");
     }
