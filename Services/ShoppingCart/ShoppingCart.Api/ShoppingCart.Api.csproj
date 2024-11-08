@@ -29,4 +29,8 @@
     </Protobuf>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\ShoppingCart\UpdateShoppingCart\" />
+  </ItemGroup>
+
 </Project>
