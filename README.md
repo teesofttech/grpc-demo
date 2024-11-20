@@ -1,7 +1,7 @@
-# Shopping Cart API with .NET 8, Aspire, gRPC, PostgreSQL, Marten and Redis
 
+# Shopping Cart API with .NET 8, Aspire, gRPC, PostgreSQL, Marten, and Redis
 
-This repository showcases a sample API built with .NET 8 that demonstrates the integration of .NET Aspire orchestration. The application utilizes Marten as its document database on PostgreSQ, and Redis for caching, all while leveraging gRPC for efficient communication. Together, these components provide a robust foundation for scalable web APIs.
+This repository showcases a sample API built with .NET 8 that demonstrates the integration of .NET Aspire orchestration. The application utilizes Marten as its document database on PostgreSQL, and Redis for caching, all while leveraging gRPC for efficient communication. Together, these components provide a robust foundation for scalable web APIs.
 
 ## Table of Contents
 
@@ -44,7 +44,7 @@ This template follows the Vertical Slice Architecture, which organizes code by f
 
 - **Built with .NET 8**: Utilizes the latest features for efficient development.
 - **.NET Aspire**: Optimized for cloud-native applications.
-- **gRPC**:  Efficient communication protocol for service interactions.
+- **gRPC**: Efficient communication protocol for service interactions.
 - **Marten**: Document database for flexible data storage.
 - **PostgreSQL**: Powerful relational database for data storage.
 - **Redis**: Caching solution for improved performance.
@@ -68,7 +68,7 @@ Contributions are what make the open-source community such an amazing place to l
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Creat a Pull Request
+5. Create a Pull Request
 
 ## License
 
@@ -79,4 +79,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 If you find this project helpful, consider buying me a coffee!
 
 [![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/poorna.soysa)
-```
