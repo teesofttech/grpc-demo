@@ -14,13 +14,13 @@ service DiscountProtoService{
 
 message CouponModel{
 	int32 id = 1;
-	string prodcutCode = 2;
+	string productCode = 2;
 	string desciption = 3;
 	int32 discountPercentage = 4;
 }
 
 message GetDiscountRequest{
-	string prodcutCode = 1;
+	string productCode = 1;
 }
 
 message CreateDiscountRequest{

@@ -7,7 +7,7 @@ public static class CouponMappingExtensions
         return new Coupon
         {
             Id = couponModel.Id,
-            ProductCode = couponModel.ProdcutCode,
+            ProductCode = couponModel.ProductCode,
             Description = couponModel.Desciption,
             DiscountPercentage = couponModel.DiscountPercentage
         };    
@@ -19,7 +19,7 @@ public static class CouponMappingExtensions
         {
             Id = coupon.Id,
             Desciption = coupon.Description,
-            ProdcutCode = coupon.ProductCode,
+            ProductCode = coupon.ProductCode,
             DiscountPercentage = coupon.DiscountPercentage
         };
     }

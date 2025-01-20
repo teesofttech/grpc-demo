@@ -40,7 +40,7 @@ public sealed record UpdateShoppingCartCommandHandler(
             var coupon = await discountService.GetDiscountAsync(
                 new GetDiscountRequest
                 {
-                    ProdcutCode = item.ProductCode
+                    ProductCode = item.ProductCode
                 },
                 cancellationToken: cancellationToken);
 

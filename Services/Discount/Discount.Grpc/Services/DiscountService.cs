@@ -9,25 +9,25 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
     {
         var coupon = await dbContext
             .Coupons
-            .FirstOrDefaultAsync(d => d.ProductCode == request.ProdcutCode);
+            .FirstOrDefaultAsync(d => d.ProductCode == request.ProductCode);
 
         if (coupon is null)
         {
             logger.LogInformation(
             "Coupon is not found for Product Code: {productCode}",
-            request.ProdcutCode);
+            request.ProductCode);
 
             return new CouponModel
             {
                 Desciption = "No Discount",
-                ProdcutCode = "No Product",
+                ProductCode = "No Product",
                 DiscountPercentage = 0
             };
         }
 
         logger.LogInformation(
             "Coupon is found for Product Code: {productCode}",
-            request.ProdcutCode);
+            request.ProductCode);
 
         return coupon.ToModel();
     }
@@ -44,7 +44,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
 
         logger.LogInformation(
             "Coupon is created for Product Code: {productCode}",
-            request.Coupon.ProdcutCode);
+            request.Coupon.ProductCode);
 
         return coupon.ToModel();
     }
@@ -55,18 +55,18 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
     {
         var coupon = await dbContext
            .Coupons
-           .FirstOrDefaultAsync(d => d.ProductCode == request.Coupon.ProdcutCode);
+           .FirstOrDefaultAsync(d => d.ProductCode == request.Coupon.ProductCode);
 
         if (coupon is null)
         {
             logger.LogInformation(
             "Coupon is not found for Product Code: {productCode}",
-            request.Coupon.ProdcutCode);
+            request.Coupon.ProductCode);
 
             throw new RpcException(
                 new Status(
                     StatusCode.NotFound,
-                    $"Coupon is not found for Product Code: {request.Coupon.ProdcutCode}")
+                    $"Coupon is not found for Product Code: {request.Coupon.ProductCode}")
                 );
         }
 
@@ -77,7 +77,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
 
         logger.LogInformation(
             "Coupon is updated by Product Code: {productCode}",
-            request.Coupon.ProdcutCode);
+            request.Coupon.ProductCode);
 
         return coupon.ToModel();
     }
@@ -88,18 +88,18 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
     {
         var coupon = await dbContext
            .Coupons           
-           .FirstOrDefaultAsync(d => d.ProductCode == request.Coupon.ProdcutCode);
+           .FirstOrDefaultAsync(d => d.ProductCode == request.Coupon.ProductCode);
 
         if (coupon is null)
         {
             logger.LogInformation(
             "Coupon is not found for Product Code: {productCode}",
-            request.Coupon.ProdcutCode);
+            request.Coupon.ProductCode);
 
             throw new RpcException(
                 new Status(
                     StatusCode.NotFound,
-                    $"Coupon is not found for Product Code: {request.Coupon.ProdcutCode}")
+                    $"Coupon is not found for Product Code: {request.Coupon.ProductCode}")
                 );
         }
 
@@ -109,7 +109,7 @@ public class DiscountService(DiscountContext dbContext, ILogger<DiscountService>
 
         logger.LogInformation(
             "Coupon is deleted by Product Code: {productCode}",
-            request.Coupon.ProdcutCode);
+            request.Coupon.ProductCode);
 
         return new DeleteDiscountResponse { Succes = true };
     }
